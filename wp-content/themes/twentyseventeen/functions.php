@@ -616,5 +616,33 @@ function add_produit_custom_post_type(){
 
 	register_post_type('produit', $args);
 }
+function add_product_taxonomies(){
 
+	//Hierarchical
+	$labels = array(
+		"name" => "Types",
+		"singular_name" => "Type",
+		"add_new_item" => "Add new type",
+		"edit_item" => "Edit type",
+		"search_items" => "Search Produit",
+		"all_items" => "All Produit",
+		"parent_item" => "Parent Type",
+		"parent_item_colon" => "Parent Type:",
+		"update_item" => "Update Type",
+		"new_item_name" => "New Type name",
+		"menu_name" => "Types"
+	);
+
+	$args = array(
+		"labels" => $labels,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_admin_column" => true,
+		"query_var" => true,
+		"rewrite" => array("slug" => "type")
+	);
+
+	register_taxonomy('type', array('produit'), $args);
+}
 add_action('init','add_produit_custom_post_type');
+add_action('init','add_product_taxonomies');
