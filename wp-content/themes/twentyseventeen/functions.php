@@ -620,17 +620,17 @@ function add_product_taxonomies(){
 
 	//Hierarchical
 	$labels = array(
-		"name" => "Types",
-		"singular_name" => "Type",
-		"add_new_item" => "Add new type",
-		"edit_item" => "Edit type",
+		"name" => "Product Types",
+		"singular_name" => "Product Type",
+		"add_new_item" => "Add new Product type",
+		"edit_item" => "Edit Product type",
 		"search_items" => "Search Produit",
 		"all_items" => "All Produit",
-		"parent_item" => "Parent Type",
-		"parent_item_colon" => "Parent Type:",
-		"update_item" => "Update Type",
-		"new_item_name" => "New Type name",
-		"menu_name" => "Types"
+		"parent_item" => "Parent Product Type",
+		"parent_item_colon" => "Parent Product Type:",
+		"update_item" => "Update Product Type",
+		"new_item_name" => "New Product Type name",
+		"menu_name" => "Product Types"
 	);
 
 	$args = array(
@@ -639,10 +639,10 @@ function add_product_taxonomies(){
 		"show_ui" => true,
 		"show_admin_column" => true,
 		"query_var" => true,
-		"rewrite" => array("slug" => "type")
+		"rewrite" => array("slug" => "product-type")
 	);
 
-	register_taxonomy('type', array('produit'), $args);
+	register_taxonomy('product-type', array('produit'), $args);
 }
 add_action('init','add_produit_custom_post_type');
 add_action('init','add_product_taxonomies');
