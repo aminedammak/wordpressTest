@@ -22,10 +22,12 @@ get_header(); ?>
 
 				get_template_part( 'template-parts/post/content', get_post_format() );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+				echo getAssignedTaxonomies($post->ID, 'product-type');
+				if(current_user_can('manage_options')){
+					$linkedit = "";
+					$linkedit.="<div>" . edit_post_link() . "</div>";
+					echo $linkedit;
+				}
 
 				the_post_navigation( array(
 					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous Post', 'twentyseventeen' ) . '</span><span aria-hidden="true" class="nav-subtitle">' . __( 'Previous', 'twentyseventeen' ) . '</span> <span class="nav-title"><span class="nav-title-icon-wrapper">' . twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '</span>%title</span>',

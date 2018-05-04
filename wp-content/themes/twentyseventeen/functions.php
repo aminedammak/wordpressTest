@@ -646,3 +646,15 @@ function add_product_taxonomies(){
 }
 add_action('init','add_produit_custom_post_type');
 add_action('init','add_product_taxonomies');
+
+function getAssignedTaxonomies($postId, $postType){
+
+	$produitTags = wp_get_post_terms($postId,$postType);
+	$tags = "";
+	foreach($produitTags as $produitTag){
+
+		$tags.= "<a href='".get_term_link($produitTag)."'>".$produitTag->name."</a> || ";
+
+	}
+	return $tags;
+}
