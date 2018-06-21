@@ -41,7 +41,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 			$term_link = get_term_link($term, 'discount');
 			if (is_wp_error($term_link))
 				continue;
-			echo '<span>' . $term->name . '</span>';
+			echo '<span class="discount-amount">' . $term->name . '</span>';
 		}
 	}
 	/**
