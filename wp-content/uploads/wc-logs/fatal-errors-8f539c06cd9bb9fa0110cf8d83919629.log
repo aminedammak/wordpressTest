@@ -48,3 +48,13 @@ Stack trace:
 #5 C:\xampp\htdocs\wordpressTest\wordpress\wp-content\themes\astra-child\woocommerce\content-product.php(37): do_action('woocommerce_bef...')
 #6 C:\xampp\htdocs\wordpressTest\wordpress\wp-includes\template.php(690): require
 
+2018-06-22T10:42:01+00:00 CRITICAL Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\wordpressTest\wordpress\wp-content\themes\astra-child\functions.php:16
+Stack trace:
+#0 C:\xampp\htdocs\wordpressTest\wordpress\wp-settings.php(424): include()
+#1 C:\xampp\htdocs\wordpressTest\wordpress\wp-config.php(89): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\wordpressTest\wordpress\wp-load.php(37): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\wordpressTest\wordpress\wp-blog-header.php(13): require_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\wordpressTest\wordpress\index.php(17): require('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown
+
